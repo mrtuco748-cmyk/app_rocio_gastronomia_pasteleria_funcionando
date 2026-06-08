@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Mise en Place Premium v4.0</title>
+<title>Otro día de Productividad</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
 :root{--cream:#F5F0E8;--ink:#1A1612;--terra:#C4623E;--muted:#756d65;--line:#e8ddd2}
@@ -53,7 +53,7 @@ h1{margin:0;font-family:'DM Serif Display',serif}
 .image-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:8px 0 12px}
 .recipe-image{position:relative;aspect-ratio:1;border-radius:12px;overflow:hidden;background:#f4ece5;border:1px solid var(--line);box-shadow:inset 0 0 0 1px rgba(0,0,0,0.05)}
 .recipe-image img{width:100%;height:100%;object-fit:cover;display:block}
-.image-remove{position:absolute;top:6px;right:6px;width:22px;height:22px;border:none;border-radius:50%;background:rgba(196,98,62,0.9);color:white;font-size:11px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;transition:background 0.2s}
+.image-remove{position:absolute;top:6px;right:6px;width:22px;height:22px;border:none;border-radius:50%;background:rgba(196,98,62,0.9);color:white;font-size:11px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .image-remove:hover{background:#9d2d17}
 
 .upload-container {
@@ -160,147 +160,46 @@ textarea{min-height:84px;resize:vertical}
 .secondary{background:#f4ece5;color:var(--ink);margin:10px 0}
 .hidden{display:none}
 
-.mas-menu-btn{display:flex;align-items:center;gap:12px;width:100%;background:#fafafa;border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:8px;cursor:pointer;text-align:left;transition:background .15s,border-color .15s;}
+.mas-menu-btn{display:flex;align-items:center;gap:12px;width:100%;background:#fafafa;border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:8px;cursor:pointer;text-align:left;transition:all .2s}
 .mas-menu-btn:hover{background:#fdf7f3;border-color:var(--terra);}
 .mas-btn-icon{font-size:24px;flex:0 0 32px;text-align:center;}
 .mas-btn-title{font-weight:700;font-size:15px;color:var(--ink);}
 .mas-btn-sub{font-size:12px;color:var(--muted);margin-top:2px;}
 .mas-btn-arrow{margin-left:auto;font-size:22px;color:var(--muted);font-weight:300;}
 
-/* ==========================================
-   NUEVO PIZARRÓN DE NOTAS EVOLUCIONADO
-========================================== */
-.pizarron-outer {
-    width: 100%;
-    height: 65vh;
-    border: 2px solid var(--line);
-    border-radius: 20px;
-    position: relative;
-    overflow: hidden;
-    background: #fbf9f5;
-    touch-action: none; 
-    box-shadow: inset 0 4px 12px rgba(0,0,0,0.04);
-}
-.pizarron-canvas-infinite {
-    width: 5000px;
-    height: 5000px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform-origin: 0 0;
-    background-image: radial-gradient(var(--line) 1px, transparent 1px);
-    background-size: 24px 24px;
-}
-.pizarron-svg-layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
-}
-.note-floating-card {
-    position: absolute;
-    background: #ffffff;
-    border: 2px solid #e3dac9;
-    border-radius: 16px;
-    padding: 12px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.06);
-    z-index: 5;
-    touch-action: none;
-    width: 170px;
-    min-height: 80px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-.note-floating-card.selected-for-connect {
-    outline: 4px solid var(--terra) !important;
-    box-shadow: 0 0 20px var(--terra);
-}
-.note-floating-card.image-card-frame {
-    border-width: 3px;
-    border-radius: 16px;
-    overflow: hidden;
-}
-.note-floating-card .card-drag-handle {
-    background: rgba(0,0,0,0.03);
-    margin: -12px -12px 6px -12px;
-    padding: 6px 12px;
-    font-size: 11px;
-    font-weight: bold;
-    color: var(--muted);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.note-floating-card h4 {
-    margin: 0;
-    font-size: 14px;
-    font-family: 'DM Serif Display', serif;
-    word-break: break-word;
-}
-.note-floating-card p {
-    margin: 0;
-    font-size: 12px;
-    white-space: pre-line;
-    word-break: break-word;
-}
-.note-floating-card img {
-    width: 100%;
-    height: auto;
-    max-height: 120px;
-    object-fit: cover;
-    border-radius: 10px; 
-    margin: 4px 0;
-    display: block;
-    pointer-events: none;
-}
-.note-floating-card .card-footer-text {
-    font-size: 11px;
-    color: inherit;
-    opacity: 0.8;
-    word-break: break-word;
-    margin-top: 2px;
-}
-.note-floating-card .card-actions-row {
-    display: flex;
-    justify-content: flex-end;
-    gap: 4px;
-    margin-top: auto;
-    padding-top: 6px;
-}
-.note-floating-card .card-actions-row button {
-    border: none;
-    background: rgba(0,0,0,0.05);
-    padding: 4px 6px;
-    border-radius: 6px;
-    font-size: 10px;
-    font-weight: bold;
-    cursor: pointer;
-}
-.pizarron-header-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: 10px;
-}
-.pizarron-header-actions button {
-    flex: 1;
-    min-width: 90px;
-}
-.indicator-panel {
-    background: #1A1612;
-    color: #fff;
-    padding: 10px;
-    border-radius: 12px;
-    font-size: 12px;
-    text-align: center;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
+/* RECIPE CARD STYLING */
+.recipe-card-item{background:#fff;border-radius:14px;padding:14px;margin-bottom:10px;border:1px solid #f0ebe6;box-shadow:0 4px 12px rgba(0,0,0,.05);transition:all .2s}
+.recipe-card-item:hover{box-shadow:0 6px 16px rgba(196,98,62,.12);border-color:var(--terra)}
+.recipe-card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px}
+.recipe-card-title{font-size:16px;font-weight:700;margin:0;font-family:'DM Serif Display',serif;color:var(--ink)}
+.recipe-card-meta{font-size:12px;color:var(--muted);margin:6px 0}
+.recipe-card-actions{display:flex;gap:6px;margin-top:10px}
+.recipe-action-btn{flex:1;border:none;border-radius:8px;padding:8px;font-weight:700;font-size:12px;cursor:pointer;transition:all .2s}
+.recipe-action-btn.edit{background:#f0ebe6;color:var(--ink)}
+.recipe-action-btn.favorite{background:#fef3f0;color:#9d2d17}
+.recipe-action-btn.delete{background:#f8e4df;color:#9d2d17}
+.recipe-action-btn.favorite.active{background:var(--terra);color:#fff}
+.recipe-action-btn:hover{transform:translateY(-2px);box-shadow:0 4px 8px rgba(0,0,0,.1)}
+
+/* ACTIVITY MODAL STYLING */
+#addActivityModal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;padding:20px;z-index:15}
+.activity-modal-card{background:white;width:100%;max-width:400px;border-radius:18px;padding:16px;max-height:90vh;overflow:auto}
+.activity-type-selector{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px 0}
+.activity-type-btn{padding:12px;border:2px solid #f0ebe6;border-radius:10px;background:#fafafa;cursor:pointer;font-weight:700;font-size:13px;transition:all .2s}
+.activity-type-btn.blue{border-color:#3498db;background:#e8f4fb}
+.activity-type-btn.red{border-color:#e74c3c;background:#fbe8e6}
+.activity-type-btn.yellow{border-color:#f1c40f;background:#fef9e6}
+.activity-type-btn.green{border-color:#2ecc71;background:#e8fce6}
+.activity-type-btn.selected{border-width:3px;transform:scale(1.05)}
+
+/* SPLASH SCREEN ANIMATION */
+#splashScreen{position:fixed;inset:0;background:#000;display:flex;align-items:center;justify-content:center;z-index:9999;animation:none}
+.splash-emoji{font-size:80px;animation:splashIn .6s ease-out}
+@keyframes splashIn{0%{opacity:0;transform:scale(0)}50%{opacity:1;transform:scale(1.2)}100%{opacity:1;transform:scale(1)}}
+.splash-particle{position:fixed;pointer-events:none;z-index:9998}
+@keyframes particleOut{0%{opacity:1;transform:translate(0,0) scale(1)}100%{opacity:0;transform:translate(var(--tx),var(--ty)) scale(0)}}
+.splash-fade{animation:screenFade .8s ease-out forwards}
+@keyframes screenFade{0%{opacity:1}100%{opacity:0}}
 
 /* MODO OSCURO */
 body.dark-mode .phone{background:#1a1a2e;}
@@ -315,13 +214,16 @@ body.dark-mode input,body.dark-mode select,body.dark-mode textarea{background:#0
 body.dark-mode .grid-table{background:#0f3460 !important;color:#e0e0e0;}
 body.dark-mode .detail-text-block{background:#0f3460;color:#e0e0e0;border-color:#1a4a7a;}
 body.dark-mode .cost-summary{background:#0f3460;border-color:#1a4a7a;}
-body.dark-mode .pizarron-outer { background: #111122; border-color: #1a4a7a; }
+body.dark-mode .recipe-card-item{background:#0f3460;border-color:#1a4a7a;color:#e0e0e0}
+body.dark-mode .recipe-card-title{color:#e0e0e0}
 </style>
 </head>
 <body>
+<div id="splashScreen"></div>
+
 <div class="phone">
 <div class="header">
-<h1>Mise en Place</h1>
+<h1>Otro día de Productividad</h1>
 <p id="todayText" class="today-text"></p>
 </div>
 
@@ -342,7 +244,10 @@ body.dark-mode .pizarron-outer { background: #111122; border-color: #1a4a7a; }
 </div>
 
 <div class="card">
-<h3 id="dayTitle">Actividades del día</h3>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+<h3 id="dayTitle" style="margin:0;">Actividades del día</h3>
+<button class="tiny-btn primary" onclick="openAddActivityModal()">+ Actividad</button>
+</div>
 <div id="dayActivities">Selecciona un día.</div>
 </div>
 
@@ -744,6 +649,24 @@ body.dark-mode .pizarron-outer { background: #111122; border-color: #1a4a7a; }
   </div>
 </div>
 
+<div id="addActivityModal" class="activity-modal-card">
+<div class="modal-head">
+<h3>Agregar Actividad</h3>
+<button class="icon-btn" onclick="closeAddActivityModal()">x</button>
+</div>
+<input id="activityTitle" placeholder="Título de la actividad" style="margin-bottom:10px;">
+<label style="font-size:12px; font-weight:bold;">Tipo de Actividad:</label>
+<div class="activity-type-selector">
+<button class="activity-type-btn blue" onclick="selectActivityType('blue', this)">Clase</button>
+<button class="activity-type-btn red" onclick="selectActivityType('red', this)">Práctico</button>
+<button class="activity-type-btn yellow" onclick="selectActivityType('yellow', this)">Examen</button>
+<button class="activity-type-btn green" onclick="selectActivityType('green', this)">Entrega</button>
+</div>
+<textarea id="activityDesc" placeholder="Descripción (opcional)"></textarea>
+<button class="save" onclick="saveNewActivity()">Guardar Actividad</button>
+<button class="secondary" onclick="closeAddActivityModal()">Cancelar</button>
+</div>
+
 <div class="bottom">
 <div class="nav">
 <button id="navInicio" class="active" onclick="showPage('inicio')">🏠<br>Inicio</button>
@@ -756,6 +679,53 @@ body.dark-mode .pizarron-outer { background: #111122; border-color: #1a4a7a; }
 
 <script>
 // ==========================================
+// ANIMACIÓN DE ENTRADA CON SPLASH SCREEN
+// ==========================================
+function initSplashScreen() {
+    const splash = document.getElementById('splashScreen');
+    splash.innerHTML = '<div class="splash-emoji">⭐</div>';
+    splash.style.display = 'flex';
+    
+    setTimeout(() => {
+        createParticles();
+    }, 600);
+}
+
+function createParticles() {
+    const splash = document.getElementById('splashScreen');
+    const particleCount = 20;
+    
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'splash-particle';
+        particle.innerHTML = '⭐';
+        particle.style.font = '20px';
+        particle.style.left = '50%';
+        particle.style.top = '50%';
+        particle.style.color = '#C4623E';
+        
+        const angle = (i / particleCount) * Math.PI * 2;
+        const distance = 150 + Math.random() * 100;
+        const tx = Math.cos(angle) * distance;
+        const ty = Math.sin(angle) * distance;
+        
+        particle.style.setProperty('--tx', `${tx}px`);
+        particle.style.setProperty('--ty', `${ty}px`);
+        particle.style.animation = 'particleOut 1s ease-out forwards';
+        
+        document.body.appendChild(particle);
+    }
+    
+    setTimeout(() => {
+        splash.classList.add('splash-fade');
+        setTimeout(() => {
+            splash.style.display = 'none';
+            document.querySelectorAll('.splash-particle').forEach(p => p.remove());
+        }, 800);
+    }, 200);
+}
+
+// ==========================================
 // CORE / REGLAS DE NAVEGACIÓN GENERALES
 // ==========================================
 const customColorsKey = 'mise_custom_colors';
@@ -765,7 +735,6 @@ function showPage(id) {
     const targetPage = document.getElementById(id);
     if(targetPage) targetPage.classList.add('active');
     
-    // Mapeo especial para botón agenda que ahora es Notas
     if (id === 'agenda') {
         document.getElementById('navAgenda').classList.add('active');
         setTimeout(() => { initPizarronEngine(); }, 50); 
@@ -787,12 +756,13 @@ function closeMasSection() {
 }
 
 // ==========================================
-// CALENDARIO DEL INICIO (MANTENIDO INTACTO)
+// CALENDARIO DEL INICIO + GESTIÓN DE ACTIVIDADES
 // ==========================================
 let currentYear, currentMonth;
 const monthNames = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 let selectedDayStr = "";
 let agendaEvents = [];
+let currentActivityType = null;
 
 function initCalendar() {
     const today = new Date();
@@ -935,12 +905,64 @@ function renderUpcomingActivities() {
         const item = document.createElement('div');
         item.className = 'listitem';
         const parts = ev.date.split('-');
+        let typeText = ev.type === 'blue' ? 'Clase' : ev.type === 'red' ? 'Práctico' : ev.type === 'yellow' ? 'Examen' : 'Entrega';
         item.innerHTML = `
-            <div class="item-date">${parts[2]}/${parts[1]} - <span class="badge ${ev.type}">${ev.type}</span></div>
+            <div class="item-date">${parts[2]}/${parts[1]} - <span class="badge ${ev.type}">${typeText}</span></div>
             <div class="item-title">${ev.title}</div>
         `;
         container.appendChild(item);
     });
+}
+
+// ==========================================
+// GESTIÓN DE ACTIVIDADES MODALES
+// ==========================================
+function openAddActivityModal() {
+    document.getElementById('addActivityModal').style.display = 'flex';
+    currentActivityType = null;
+    document.getElementById('activityTitle').value = '';
+    document.getElementById('activityDesc').value = '';
+    document.querySelectorAll('.activity-type-btn').forEach(b => b.classList.remove('selected'));
+}
+
+function closeAddActivityModal() {
+    document.getElementById('addActivityModal').style.display = 'none';
+}
+
+function selectActivityType(type, btn) {
+    currentActivityType = type;
+    document.querySelectorAll('.activity-type-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+}
+
+function saveNewActivity() {
+    const title = document.getElementById('activityTitle').value.trim();
+    const desc = document.getElementById('activityDesc').value.trim();
+    
+    if (!title) {
+        alert('Por favor ingresa un título para la actividad');
+        return;
+    }
+    
+    if (!currentActivityType) {
+        alert('Por favor selecciona un tipo de actividad');
+        return;
+    }
+    
+    const newEvent = {
+        id: Date.now().toString(),
+        date: selectedDayStr,
+        title: title,
+        type: currentActivityType,
+        desc: desc
+    };
+    
+    agendaEvents.push(newEvent);
+    localStorage.setItem('mise_agenda_events', JSON.stringify(agendaEvents));
+    renderCalendar();
+    renderUpcomingActivities();
+    renderDayActivities();
+    closeAddActivityModal();
 }
 
 // ==========================================
@@ -954,6 +976,7 @@ function loadRecipes() {
     recipes = JSON.parse(localStorage.getItem('mise_recipes') || '[]');
     renderRecipeList();
 }
+
 function showRecipeTab(tab) {
     currentRecipeTab = tab;
     document.querySelectorAll('.recipe-tabs .tab-btn').forEach(b => b.classList.remove('active'));
@@ -962,6 +985,7 @@ function showRecipeTab(tab) {
     if(tab==='costs') document.getElementById('recipesTabCosts').classList.add('active');
     renderRecipeList();
 }
+
 function renderRecipeList() {
     const container = document.getElementById('recipeContent');
     if(!container) return;
@@ -976,1131 +1000,298 @@ function renderRecipeList() {
     
     container.innerHTML = '';
     filtered.forEach(r => {
-        const item = document.createElement('div');
-        item.className = 'card listitem';
-        item.style.padding = '12px';
-        
         let totalCost = 0;
         if(r.ingredients) {
             r.ingredients.forEach(i => { totalCost += (parseFloat(i.cost) || 0); });
         }
         
-        let costView = currentRecipeTab === 'costs' ? `<div style="font-weight:bold; color:var(--terra); margin-top:6px;">Costo Total Estimado: $${totalCost.toFixed(2)}</div>` : '';
         let favIcon = r.favorite ? '⭐' : '☆';
         
+        const item = document.createElement('div');
+        item.className = 'recipe-card-item';
         item.innerHTML = `
-            <div style="display:flex; justify-content:between; align-items:start;">
-                <div style="flex:1;" onclick="viewRecipeDetail('${r.id}')">
-                    <span class="item-date">${r.category || 'Sin categoría'}</span>
-                    <div class="item-title" style="font-size:16px;">${r.name}</div>
-                    <div class="item-desc">${r.servings || 1} porciones base</div>
-                    ${costView}
+            <div class="recipe-card-header">
+                <div onclick="viewRecipeDetail('${r.id}')" style="flex:1; cursor:pointer;">
+                    <div class="recipe-card-meta">${r.category || 'Sin categoría'}</div>
+                    <h3 class="recipe-card-title">${r.name}</h3>
+                    <div class="recipe-card-meta">${r.servings || 1} porciones base</div>
+                    ${currentRecipeTab === 'costs' ? `<div style="font-weight:bold; color:var(--terra); margin-top:6px;">Costo Total: $${totalCost.toFixed(2)}</div>` : ''}
                 </div>
-                <button style="background:none; border:none; font-size:20px; cursor:pointer;" onclick="toggleFavoriteRecipe('${r.id}', event)">${favIcon}</button>
+            </div>
+            <div class="recipe-card-actions">
+                <button class="recipe-action-btn edit" onclick="showRecipeForm('${r.id}')">✏️ Editar</button>
+                <button class="recipe-action-btn favorite ${r.favorite ? 'active' : ''}" onclick="toggleFavoriteRecipe('${r.id}', event)">${favIcon} Favorito</button>
+                <button class="recipe-action-btn delete" onclick="deleteRecipe('${r.id}', event)">🗑️ Borrar</button>
             </div>
         `;
         container.appendChild(item);
     });
 }
-function toggleFavoriteRecipe(id, event) {
-    event.stopPropagation();
-    recipes = recipes.map(r => r.id === id ? {...r, favorite: !r.favorite} : r);
-    localStorage.setItem('mise_recipes', JSON.stringify(recipes));
-    renderRecipeList();
-}
-function viewRecipeDetail(id) {
-    const r = recipes.find(rec => rec.id === id);
-    if(!r) return;
-    currentRecipeForScaling = r;
-    
-    document.getElementById('recipeMainState').classList.add('hidden');
-    document.getElementById('recipeDetailCard').classList.remove('hidden');
-    
-    document.getElementById('detailTitle').textContent = r.name;
-    document.getElementById('detailCategoryRow').textContent = `${r.category || 'Sin categoría'} • Porciones Base: ${r.servings || 1}`;
-    document.getElementById('detailScaleServings').value = r.servings || 1;
-    document.getElementById('detailSteps').textContent = r.steps || 'Sin pasos.';
-    
-    if(r.notes) {
-        document.getElementById('detailNotesBlock').classList.remove('hidden');
-        document.getElementById('detailNotes').textContent = r.notes;
-    } else {
-        document.getElementById('detailNotesBlock').classList.add('hidden');
-    }
-    
-    const slider = document.getElementById('detailBigImages');
-    slider.innerHTML = '';
-    if(r.images && r.images.length > 0) {
-        r.images.forEach(imgData => {
-            const wrapper = document.createElement('div');
-            wrapper.className = 'big-image-card';
-            wrapper.innerHTML = `<img src="${imgData}">`;
-            slider.appendChild(wrapper);
-        });
-        slider.classList.remove('hidden');
-    } else {
-        slider.classList.add('hidden');
-    }
-    
-    scaleRecipeIngredients();
-}
-function hideRecipeDetail() {
-    document.getElementById('recipeDetailCard').classList.add('hidden');
-    document.getElementById('recipeMainState').classList.remove('hidden');
-    currentRecipeForScaling = null;
-}
-function scaleRecipeIngredients() {
-    if(!currentRecipeForScaling) return;
-    const baseServings = parseFloat(currentRecipeForScaling.servings) || 1;
-    const targetServings = parseFloat(document.getElementById('detailScaleServings').value) || baseServings;
-    const factor = targetServings / baseServings;
-    
-    const list = document.getElementById('detailIngredientsList');
-    list.innerHTML = '';
-    
-    let sumCost = 0;
-    if(currentRecipeForScaling.ingredients) {
-        currentRecipeForScaling.ingredients.forEach(i => {
-            const li = document.createElement('li');
-            const qtyBase = parseFloat(i.qty) || 0;
-            const finalQty = qtyBase * factor;
-            const finalCost = (parseFloat(i.cost) || 0) * factor;
-            sumCost += finalCost;
-            
-            let qtyDisplay = qtyBase > 0 ? `${finalQty.toFixed(1).replace('.0','')} ${i.unit}` : '';
-            li.innerHTML = `<div>${i.name}</div><span class="qty">${qtyDisplay} ($${finalCost.toFixed(2)})</span>`;
-            list.appendChild(li);
-        });
-    }
-    
-    const costBlock = document.getElementById('detailCostBlock');
-    costBlock.innerHTML = `Costo Total Proporcional para ${targetServings} porciones: <strong>$${sumCost.toFixed(2)}</strong>`;
-    costBlock.classList.remove('hidden');
-}
 
-let tempFormImages = [];
-function showRecipeForm(editId = null) {
-    document.getElementById('recipeMainState').classList.add('hidden');
-    document.getElementById('recipeDetailCard').classList.add('hidden');
-    document.getElementById('recipeFormCard').classList.remove('hidden');
-    
-    const container = document.getElementById('ingredientsContainer');
-    container.innerHTML = '';
-    document.getElementById('recipeImagePreview').innerHTML = '';
-    document.getElementById('recipeSavedImages').innerHTML = '';
-    tempFormImages = [];
-    
-    if(editId) {
-        const r = recipes.find(rec => rec.id === editId);
-        document.getElementById('recipeFormTitle').textContent = "Editar receta";
-        document.getElementById('recipeId').value = r.id;
-        document.getElementById('recipeName').value = r.name;
-        document.getElementById('recipeCategory').value = r.category || '';
-        document.getElementById('recipeServings').value = r.servings || 1;
-        document.getElementById('recipeSteps').value = r.steps || '';
-        document.getElementById('recipeNotes').value = r.notes || '';
+function showRecipeForm(id = null) {
+    if (id) {
+        const recipe = recipes.find(r => r.id === id);
+        if (!recipe) return;
         
-        if(r.ingredients) {
-            r.ingredients.forEach(i => addIngredientRow(i.name, i.qty, i.unit, i.cost));
+        document.getElementById('recipeFormTitle').textContent = 'Editar receta';
+        document.getElementById('recipeId').value = recipe.id;
+        document.getElementById('recipeName').value = recipe.name || '';
+        document.getElementById('recipeCategory').value = recipe.category || '';
+        document.getElementById('recipeServings').value = recipe.servings || 1;
+        document.getElementById('recipeSteps').value = recipe.steps || '';
+        document.getElementById('recipeNotes').value = recipe.notes || '';
+        
+        document.getElementById('ingredientsContainer').innerHTML = '';
+        if (recipe.ingredients) {
+            recipe.ingredients.forEach(ing => {
+                addIngredientRow(ing.name, ing.qty, ing.unit, ing.cost);
+            });
+        } else {
+            addIngredientRow();
         }
-        if(r.images) {
-            tempFormImages = [...r.images];
-            renderFormImagePreview();
-        }
+        
+        renderSavedImages(recipe.images || []);
     } else {
-        document.getElementById('recipeFormTitle').textContent = "Nueva receta";
+        document.getElementById('recipeFormTitle').textContent = 'Nueva receta';
         document.getElementById('recipeId').value = '';
         document.getElementById('recipeName').value = '';
         document.getElementById('recipeCategory').value = '';
-        document.getElementById('recipeServings').value = '';
+        document.getElementById('recipeServings').value = 1;
         document.getElementById('recipeSteps').value = '';
         document.getElementById('recipeNotes').value = '';
+        document.getElementById('ingredientsContainer').innerHTML = '';
         addIngredientRow();
+        document.getElementById('recipeImagePreview').innerHTML = '';
+        document.getElementById('recipeSavedImages').innerHTML = '';
     }
+    
+    document.getElementById('recipeMainState').classList.add('hidden');
+    document.getElementById('recipeFormCard').classList.remove('hidden');
 }
+
 function hideRecipeForm() {
     document.getElementById('recipeFormCard').classList.add('hidden');
     document.getElementById('recipeMainState').classList.remove('hidden');
 }
-function addIngredientRow(name='', qty='', unit='g', cost='') {
+
+function addIngredientRow(name = '', qty = '', unit = '', cost = '') {
     const container = document.getElementById('ingredientsContainer');
     const row = document.createElement('div');
     row.className = 'ingredient-input-row';
     row.innerHTML = `
-        <input class="ing-name" placeholder="Nombre" value="${name}">
-        <input class="ing-qty" type="number" placeholder="Cant" value="${qty}">
-        <input class="ing-unit" placeholder="U" value="${unit}" style="padding:10px 4px;">
-        <input class="ing-cost" type="number" placeholder="$" value="${cost}">
-        <button type="button" class="ingredient-row-btn danger-style" onclick="this.parentElement.remove()">X</button>
+        <input type="text" placeholder="Ingrediente" value="${name}">
+        <input type="number" placeholder="Qty" value="${qty}" step="0.01">
+        <input type="text" placeholder="Unit" value="${unit}">
+        <button type="button" class="ingredient-row-btn danger-style" onclick="this.parentElement.remove()">−</button>
     `;
     container.appendChild(row);
 }
-function previewSelectedRecipeImages() {
-    const files = document.getElementById('recipeImages').files;
-    for(let i=0; i<files.length; i++) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            tempFormImages.push(e.target.result);
-            renderFormImagePreview();
-        };
-        reader.readAsDataURL(files[i]);
-    }
-}
-function renderFormImagePreview() {
-    const grid = document.getElementById('recipeImagePreview');
-    grid.innerHTML = '';
-    tempFormImages.forEach((imgSrc, index) => {
-        const box = document.createElement('div');
-        box.className = 'recipe-image';
-        box.innerHTML = `
-            <img src="${imgSrc}">
-            <button type="button" class="image-remove" onclick="removeFormImage(${index})">X</button>
-        `;
-        grid.appendChild(box);
-    });
-}
-function removeFormImage(idx) {
-    tempFormImages.splice(idx, 1);
-    renderFormImagePreview();
-}
+
 function saveRecipe() {
-    const id = document.getElementById('recipeId').value || 'rec_' + Date.now();
+    const id = document.getElementById('recipeId').value || Date.now().toString();
     const name = document.getElementById('recipeName').value.trim();
-    if(!name) { alert('Falta el nombre de la receta'); return; }
+    const category = document.getElementById('recipeCategory').value.trim();
+    const servings = parseFloat(document.getElementById('recipeServings').value) || 1;
+    const steps = document.getElementById('recipeSteps').value.trim();
+    const notes = document.getElementById('recipeNotes').value.trim();
+    
+    if (!name) {
+        alert('Por favor ingresa el nombre de la receta');
+        return;
+    }
     
     const ingredients = [];
     document.querySelectorAll('.ingredient-input-row').forEach(row => {
-        const n = row.querySelector('.ing-name').value.trim();
-        if(n) {
+        const inputs = row.querySelectorAll('input');
+        const ing_name = inputs[0].value.trim();
+        const ing_qty = parseFloat(inputs[1].value) || 0;
+        const ing_unit = inputs[2].value.trim();
+        const ing_cost = parseFloat(inputs[3]?.value) || 0;
+        
+        if (ing_name) {
             ingredients.push({
-                name: n,
-                qty: row.querySelector('.ing-qty').value || 0,
-                unit: row.querySelector('.ing-unit').value || 'g',
-                cost: row.querySelector('.ing-cost').value || 0
+                name: ing_name,
+                qty: ing_qty,
+                unit: ing_unit,
+                cost: ing_cost
             });
         }
     });
     
-    const newRecipe = {
+    const existingIndex = recipes.findIndex(r => r.id === id);
+    const recipeData = {
         id,
         name,
-        category: document.getElementById('recipeCategory').value.trim(),
-        servings: document.getElementById('recipeServings').value || 1,
-        steps: document.getElementById('recipeSteps').value,
-        notes: document.getElementById('recipeNotes').value,
+        category,
+        servings,
+        steps,
+        notes,
         ingredients,
-        images: tempFormImages,
-        favorite: recipes.find(r => r.id === id)?.favorite || false
+        favorite: existingIndex >= 0 ? recipes[existingIndex].favorite : false,
+        images: existingIndex >= 0 ? recipes[existingIndex].images : []
     };
     
-    const existingIdx = recipes.findIndex(r => r.id === id);
-    if(existingIdx > -1) recipes[existingIdx] = newRecipe;
-    else recipes.push(newRecipe);
+    if (existingIndex >= 0) {
+        recipes[existingIndex] = recipeData;
+    } else {
+        recipes.push(recipeData);
+    }
     
     localStorage.setItem('mise_recipes', JSON.stringify(recipes));
     hideRecipeForm();
-    loadRecipes();
+    showRecipeTab(currentRecipeTab);
 }
 
-// ==========================================
-// BIBLIOTECA GASTRONÓMICA & ESTUDIO
-// ==========================================
-let currentBibTab = 'Apuntes';
-let flashcards = [];
-let currentFlashIdx = 0;
-let isFlashFlipped = false;
-
-function showBibTab(tab) {
-    currentBibTab = tab;
-    document.querySelectorAll('[id^="bibTab"]').forEach(b => b.classList.remove('active'));
-    document.getElementById('bibTab'+tab).classList.add('active');
+function viewRecipeDetail(id) {
+    const recipe = recipes.find(r => r.id === id);
+    if (!recipe) return;
     
-    document.getElementById('bibPanelApuntes').classList.add('hidden');
-    document.getElementById('bibPanelTecnicas').classList.add('hidden');
-    document.getElementById('bibPanelFlash').classList.add('hidden');
-    document.getElementById('bibPanelGlosario').classList.add('hidden');
-    document.getElementById('bibPanelBiblio').classList.add('hidden');
+    currentRecipeForScaling = recipe;
+    document.getElementById('detailTitle').textContent = recipe.name;
+    document.getElementById('detailCategoryRow').textContent = `${recipe.category || 'Sin categoría'} • ${recipe.servings} porciones`;
+    document.getElementById('detailScaleServings').value = recipe.servings;
     
-    document.getElementById('bibPanel'+tab).classList.remove('hidden');
-    
-    if(tab==='Apuntes') renderApuntes();
-    if(tab==='Tecnicas') renderTecnicas();
-    if(tab==='Flash') { exitFlashStudy(); renderFlashcards(); }
-    if(tab==='Glosario') renderGlosario();
-    if(tab==='Biblio') renderBiblio();
-}
-function openBibModal() { document.getElementById('bibModal').style.display='flex'; }
-function closeBibModal() { document.getElementById('bibModal').style.display='none'; }
-
-function renderApuntes() {
-    const arr = JSON.parse(localStorage.getItem('mise_bib_apuntes') || '[]');
-    const cont = document.getElementById('bibApuntesList');
-    if(arr.length===0) { cont.innerHTML='<p class="empty">No hay apuntes. Creá uno nuevo.</p>'; return; }
-    cont.innerHTML='';
-    arr.forEach((item,i) => {
-        const div = document.createElement('div');
-        div.className = 'listitem';
-        div.innerHTML = `<div class="item-title">${item.title}</div><div class="item-desc">${item.content}</div>
-        <div style="text-align:right;"><button class="tiny-btn danger-style" style="padding:2px 6px; font-size:10px;" onclick="deleteBibItem('mise_bib_apuntes',${i},'Apuntes')">Eliminar</button></div>`;
-        cont.appendChild(div);
-    });
-}
-function openNoteModal() {
-    openBibModal();
-    document.getElementById('bibModalTitle').textContent = 'Nuevo Apunte Culinario';
-    document.getElementById('bibModalBody').innerHTML = `
-        <input id="newNoteTitle" placeholder="Título del apunte">
-        <textarea id="newNoteContent" placeholder="Contenido o apuntes de clase..."></textarea>
-        <button class="save" onclick="saveNewApunte()">Guardar Apunte</button>
-    `;
-}
-function saveNewApunte() {
-    const t = document.getElementById('newNoteTitle').value.trim();
-    const c = document.getElementById('newNoteContent').value.trim();
-    if(!t) return;
-    const arr = JSON.parse(localStorage.getItem('mise_bib_apuntes') || '[]');
-    arr.push({title:t, content:c});
-    localStorage.setItem('mise_bib_apuntes', JSON.stringify(arr));
-    closeBibModal(); renderApuntes();
-}
-
-function renderTecnicas() {
-    const arr = JSON.parse(localStorage.getItem('mise_bib_tecnicas') || '[]');
-    const cont = document.getElementById('bibTecnicasList');
-    if(arr.length===0) { cont.innerHTML='<p class="empty">No hay técnicas registradas.</p>'; return; }
-    cont.innerHTML='';
-    arr.forEach((item,i) => {
-        const div = document.createElement('div');
-        div.className = 'listitem';
-        div.innerHTML = `<div class="item-title" style="color:var(--terra);">${item.name}</div><div class="item-desc"><strong>Pasos clave:</strong> ${item.steps}</div>
-        <div style="text-align:right; margin-top:4px;"><button class="tiny-btn danger-style" style="padding:2px 6px; font-size:10px;" onclick="deleteBibItem('mise_bib_tecnicas',${i},'Tecnicas')">Eliminar</button></div>`;
-        cont.appendChild(div);
-    });
-}
-function openTechModal() {
-    openBibModal();
-    document.getElementById('bibModalTitle').textContent = 'Registrar Técnica';
-    document.getElementById('bibModalBody').innerHTML = `
-        <input id="newTechName" placeholder="Nombre de la técnica (Ej: Torneado)">
-        <textarea id="newTechSteps" placeholder="Puntos críticos y descripción de la técnica..."></textarea>
-        <button class="save" onclick="saveNewTech()">Guardar Técnica</button>
-    `;
-}
-function saveNewTech() {
-    const n = document.getElementById('newTechName').value.trim();
-    const s = document.getElementById('newTechSteps').value.trim();
-    if(!n) return;
-    const arr = JSON.parse(localStorage.getItem('mise_bib_tecnicas') || '[]');
-    arr.push({name:n, steps:s});
-    localStorage.setItem('mise_bib_tecnicas', JSON.stringify(arr));
-    closeBibModal(); renderTecnicas();
-}
-
-function renderFlashcards() {
-    flashcards = JSON.parse(localStorage.getItem('mise_bib_flash') || '[]');
-    const cont = document.getElementById('bibFlashList');
-    if(flashcards.length===0) {
-        cont.innerHTML='<p class="empty">No hay flashcards para estudiar.</p>';
-        return;
+    document.getElementById('detailBigImages').innerHTML = '';
+    if (recipe.images && recipe.images.length > 0) {
+        recipe.images.forEach(img => {
+            const card = document.createElement('div');
+            card.className = 'big-image-card';
+            card.innerHTML = `<img src="${img}" alt="Receta">`;
+            document.getElementById('detailBigImages').appendChild(card);
+        });
     }
-    cont.innerHTML = `<button class="save" style="margin-bottom:10px;" onclick="startFlashStudy()">🚀 Iniciar Modo Estudio (${flashcards.length})</button>`;
-    flashcards.forEach((item,i) => {
-        const div = document.createElement('div');
-        div.className = 'listitem';
-        div.innerHTML = `<div class="item-title">Q: ${item.q}</div><div class="item-desc">A: ${item.a}</div>
-        <div style="text-align:right;"><button class="tiny-btn danger-style" style="padding:2px 6px; font-size:10px;" onclick="deleteBibItem('mise_bib_flash',${i},'Flash')">Eliminar</button></div>`;
-        cont.appendChild(div);
-    });
-}
-function openFlashModal() {
-    openBibModal();
-    document.getElementById('bibModalTitle').textContent = 'Nueva Flashcard';
-    document.getElementById('bibModalBody').innerHTML = `
-        <input id="newFlashQ" placeholder="Pregunta (Ej: ¿Temperatura de pasteurización?)">
-        <input id="newFlashA" placeholder="Respuesta correcta">
-        <button class="save" onclick="saveNewFlash()">Guardar Tarjeta</button>
-    `;
-}
-function saveNewFlash() {
-    const q = document.getElementById('newFlashQ').value.trim();
-    const a = document.getElementById('newFlashA').value.trim();
-    if(!q || !a) return;
-    const arr = JSON.parse(localStorage.getItem('mise_bib_flash') || '[]');
-    arr.push({q, a});
-    localStorage.setItem('mise_bib_flash', JSON.stringify(arr));
-    closeBibModal(); renderFlashcards();
-}
-function startFlashStudy() {
-    if(flashcards.length===0) return;
-    document.getElementById('bibFlashList').classList.add('hidden');
-    document.getElementById('bibFlashStudy').classList.remove('hidden');
-    currentFlashIdx = 0;
-    showCurrentFlashcard();
-}
-function exitFlashStudy() {
-    document.getElementById('bibFlashStudy').classList.add('hidden');
-    document.getElementById('bibFlashList').classList.remove('hidden');
-}
-function showCurrentFlashcard() {
-    isFlashFlipped = false;
-    document.getElementById('flashCardSide').textContent = "PREGUNTA";
-    document.getElementById('flashCardText').textContent = flashcards[currentFlashIdx].q;
-    document.getElementById('flashProgress').textContent = `Tarjeta ${currentFlashIdx + 1} de ${flashcards.length}`;
-}
-function flipFlashcard() {
-    isFlashFlipped = !isFlashFlipped;
-    if(isFlashFlipped) {
-        document.getElementById('flashCardSide').textContent = "RESPUESTA";
-        document.getElementById('flashCardText').textContent = flashcards[currentFlashIdx].a;
+    
+    const ingList = document.getElementById('detailIngredientsList');
+    ingList.innerHTML = '';
+    if (recipe.ingredients) {
+        recipe.ingredients.forEach(ing => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <span>${ing.name}</span>
+                <span class="qty">${ing.qty} ${ing.unit}</span>
+            `;
+            ingList.appendChild(li);
+        });
+    }
+    
+    document.getElementById('detailSteps').textContent = recipe.steps || '';
+    
+    const notesBlock = document.getElementById('detailNotesBlock');
+    if (recipe.notes) {
+        document.getElementById('detailNotes').textContent = recipe.notes;
+        notesBlock.classList.remove('hidden');
     } else {
-        document.getElementById('flashCardSide').textContent = "PREGUNTA";
-        document.getElementById('flashCardText').textContent = flashcards[currentFlashIdx].q;
+        notesBlock.classList.add('hidden');
+    }
+    
+    document.getElementById('recipeMainState').classList.add('hidden');
+    document.getElementById('recipeDetailCard').classList.remove('hidden');
+}
+
+function hideRecipeDetail() {
+    document.getElementById('recipeDetailCard').classList.add('hidden');
+    document.getElementById('recipeMainState').classList.remove('hidden');
+}
+
+function toggleFavoriteRecipe(id, event) {
+    event.stopPropagation();
+    const recipe = recipes.find(r => r.id === id);
+    if (recipe) {
+        recipe.favorite = !recipe.favorite;
+        localStorage.setItem('mise_recipes', JSON.stringify(recipes));
+        renderRecipeList();
     }
 }
-function nextFlash() {
-    currentFlashIdx = (currentFlashIdx + 1) % flashcards.length;
-    showCurrentFlashcard();
-}
-// Funcionalidad extra agregada para control completo
-function prevFlash() {
-    currentFlashIdx = (currentFlashIdx - 1 + flashcards.length) % flashcards.length;
-    showCurrentFlashcard();
-}
 
-function renderGlosario() {
-    const arr = JSON.parse(localStorage.getItem('mise_bib_glosario') || '[]');
-    const cont = document.getElementById('bibGlosarioList');
-    const filter = document.getElementById('glossSearch').value.toLowerCase();
-    
-    let items = arr.sort((a,b) => a.term.localeCompare(b.term));
-    if(filter) items = items.filter(i => i.term.toLowerCase().includes(filter) || i.def.toLowerCase().includes(filter));
-    
-    if(items.length===0) { cont.innerHTML='<p class="empty">No se encontraron términos.</p>'; return; }
-    cont.innerHTML='';
-    items.forEach((item, idx) => {
-        const div = document.createElement('div');
-        div.className = 'listitem';
-        div.innerHTML = `<div><strong>${item.term}:</strong> ${item.def}</div>
-        <div style="text-align:right; margin-top:4px;"><button class="tiny-btn danger-style" style="padding:2px 6px; font-size:10px;" onclick="deleteGlossItem('${item.term}')">Eliminar</button></div>`;
-        cont.appendChild(div);
-    });
-}
-function openGlossModal() {
-    openBibModal();
-    document.getElementById('bibModalTitle').textContent = 'Añadir al Glosario';
-    document.getElementById('bibModalBody').innerHTML = `
-        <input id="newGlossTerm" placeholder="Término técnico (Ej: Mirepoix)">
-        <input id="newGlossDef" placeholder="Definición o significado...">
-        <button class="save" onclick="saveNewGloss()">Guardar Término</button>
-    `;
-}
-function saveNewGloss() {
-    const term = document.getElementById('newGlossTerm').value.trim();
-    const def = document.getElementById('newGlossDef').value.trim();
-    if(!term) return;
-    const arr = JSON.parse(localStorage.getItem('mise_bib_glosario') || '[]');
-    arr.push({term, def});
-    localStorage.setItem('mise_bib_glosario', JSON.stringify(arr));
-    closeBibModal(); renderGlosario();
-}
-function deleteGlossItem(term) {
-    let arr = JSON.parse(localStorage.getItem('mise_bib_glosario') || '[]');
-    arr = arr.filter(i => i.term !== term);
-    localStorage.setItem('mise_bib_glosario', JSON.stringify(arr));
-    renderGlosario();
-}
-
-function renderBiblio() {
-    const arr = JSON.parse(localStorage.getItem('mise_bib_libros') || '[]');
-    const cont = document.getElementById('bibBiblioList');
-    if(arr.length===0) { cont.innerHTML='<p class="empty">No hay libros o links guardados.</p>'; return; }
-    cont.innerHTML='';
-    arr.forEach((item,i) => {
-        const div = document.createElement('div');
-        div.className = 'listitem';
-        div.innerHTML = `<div class="item-title">📚 ${item.title}</div><div class="item-desc">Autor/Ref: ${item.author}</div>
-        ${item.link ? `<a href="${item.link}" target="_blank" style="font-size:12px; color:var(--terra); word-break:break-all;">Abrir enlace externo</a>` : ''}
-        <div style="text-align:right; margin-top:4px;"><button class="tiny-btn danger-style" style="padding:2px 6px; font-size:10px;" onclick="deleteBibItem('mise_bib_libros',${i},'Biblio')">Eliminar</button></div>`;
-        cont.appendChild(div);
-    });
-}
-function openBiblioModal() {
-    openBibModal();
-    document.getElementById('bibModalTitle').textContent = 'Añadir Recurso / Libro';
-    document.getElementById('bibModalBody').innerHTML = `
-        <input id="newBookTitle" placeholder="Título del libro o PDF">
-        <input id="newBookAuthor" placeholder="Autor o ubicación en estantería">
-        <input id="newBookLink" placeholder="Link de descarga / web (opcional)">
-        <button class="save" onclick="saveNewBook()">Guardar Recurso</button>
-    `;
-}
-function saveNewBook() {
-    const title = document.getElementById('newBookTitle').value.trim();
-    const author = document.getElementById('newBookAuthor').value.trim();
-    const link = document.getElementById('newBookLink').value.trim();
-    if(!title) return;
-    const arr = JSON.parse(localStorage.getItem('mise_bib_libros') || '[]');
-    arr.push({title, author, link});
-    localStorage.setItem('mise_bib_libros', JSON.stringify(arr));
-    closeBibModal(); renderBiblio();
-}
-function deleteBibItem(storageKey, index, currentTabName) {
-    const arr = JSON.parse(localStorage.getItem(storageKey) || '[]');
-    arr.splice(index, 1);
-    localStorage.setItem(storageKey, JSON.stringify(arr));
-    showBibTab(currentTabName);
-}
-
-// ==========================================
-// HERRAMIENTAS DEL CHEF (CONVERSORES)
-// ==========================================
-function calculateMassVolume() {
-    const val = parseFloat(document.getElementById('massValue').value) || 0;
-    const unit = document.getElementById('massUnit').value;
-    const resultsDiv = document.getElementById('massResults');
-    if(!resultsDiv) return;
-    
-    let baseInGrams = 0; 
-    if(unit === 'g') baseInGrams = val;
-    else if(unit === 'kg') baseInGrams = val * 1000;
-    else if(unit === 'oz') baseInGrams = val * 28.3495;
-    else if(unit === 'lb') baseInGrams = val * 453.592;
-    else if(unit === 'ml') baseInGrams = val; 
-    else if(unit === 'l') baseInGrams = val * 1000;
-    else if(unit === 'tazas') baseInGrams = val * 240;
-    else if(unit === 'cda') baseInGrams = val * 15;
-    else if(unit === 'cdita') baseInGrams = val * 5;
-    else if(unit === 'floz') baseInGrams = val * 29.5735;
-    
-    resultsDiv.innerHTML = `
-        <div>Gramos:</div><div>${baseInGrams.toFixed(1)} g</div>
-        <div>Kilogramos:</div><div>${(baseInGrams/1000).toFixed(3)} kg</div>
-        <div>Onzas:</div><div>${(baseInGrams/28.3495).toFixed(2)} oz</div>
-        <div>Libras:</div><div>${(baseInGrams/453.592).toFixed(2)} lb</div>
-        <div>Tazas aprox:</div><div>${(baseInGrams/240).toFixed(2)} tazas</div>
-        <div>Cucharadas (Cda):</div><div>${(baseInGrams/15).toFixed(1)} cda</div>
-    `;
-}
-function convertTemp(source) {
-    if(source === 'C') {
-        const c = parseFloat(document.getElementById('tempC').value);
-        if(!isNaN(c)) document.getElementById('tempF').value = Math.round((c * 9/5) + 32);
-        else document.getElementById('tempF').value = '';
-    } else {
-        const f = parseFloat(document.getElementById('tempF').value);
-        if(!isNaN(f)) document.getElementById('tempC').value = Math.round((f - 32) * 5/9);
-        else document.getElementById('tempC').value = '';
+function deleteRecipe(id, event) {
+    event.stopPropagation();
+    if (confirm('¿Estás seguro de que quieres eliminar esta receta?')) {
+        recipes = recipes.filter(r => r.id !== id);
+        localStorage.setItem('mise_recipes', JSON.stringify(recipes));
+        renderRecipeList();
     }
 }
-function toggleCritTables() {
-    const sel = document.getElementById('tableSelector').value;
-    if(sel === 'sugar') {
-        document.getElementById('sugarTable').classList.remove('hidden');
-        document.getElementById('chocolateTable').classList.add('hidden');
-    } else {
-        document.getElementById('sugarTable').classList.add('hidden');
-        document.getElementById('chocolateTable').classList.remove('hidden');
+
+function scaleRecipeIngredients() {
+    const targetServings = parseFloat(document.getElementById('detailScaleServings').value);
+    const baseServings = currentRecipeForScaling.servings;
+    const scale = targetServings / baseServings;
+    
+    const ingList = document.getElementById('detailIngredientsList');
+    ingList.innerHTML = '';
+    
+    if (currentRecipeForScaling.ingredients) {
+        currentRecipeForScaling.ingredients.forEach(ing => {
+            const scaledQty = ing.qty * scale;
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <span>${ing.name}</span>
+                <span class="qty">${scaledQty.toFixed(2)} ${ing.unit}</span>
+            `;
+            ingList.appendChild(li);
+        });
     }
 }
-function calculateBakerPercentages() {
-    const flour = parseFloat(document.getElementById('bakerFlour').value) || 0;
-    const waterPct = parseFloat(document.getElementById('bakerWaterPct').value) || 0;
-    const yeastPct = parseFloat(document.getElementById('bakerYeastPct').value) || 0;
-    const saltPct = 2; 
-    
-    const res = document.getElementById('bakerResults');
-    if(!res) return;
-    
-    res.innerHTML = `
-        <div>Harina (100%):</div><div><strong>${flour.toFixed(0)} g</strong></div>
-        <div>Agua (${waterPct}%):</div><div>${((flour * waterPct)/100).toFixed(0)} g</div>
-        <div>Levadura (${yeastPct}%):</div><div>${((flour * yeastPct)/100).toFixed(1)} g</div>
-        <div>Sal (Fija ${saltPct}%):</div><div>${((flour * saltPct)/100).toFixed(0)} g</div>
-        <div>Masa Total:</div><div><strong>${(flour + (flour*waterPct/100) + (flour*yeastPct/100) + (flour*saltPct/100)).toFixed(0)} g</strong></div>
-    `;
-}
 
-// ==========================================
-// IMÁGENES DE IDEA REFERENCIALES
-// ==========================================
-function addIdeaImages() {
-    const input = document.getElementById('ideaImageInput');
-    const saved = JSON.parse(localStorage.getItem('mise_idea_images') || '[]');
+function previewSelectedRecipeImages() {
+    const files = document.getElementById('recipeImages').files;
+    const preview = document.getElementById('recipeImagePreview');
+    preview.innerHTML = '';
     
-    for(let i=0; i<input.files.length; i++) {
+    Array.from(files).forEach(file => {
         const reader = new FileReader();
-        reader.onload = function(e) {
-            saved.push(e.target.result);
-            localStorage.setItem('mise_idea_images', JSON.stringify(saved));
-            renderIdeaImages();
+        reader.onload = (e) => {
+            const div = document.createElement('div');
+            div.className = 'recipe-image';
+            div.innerHTML = `
+                <img src="${e.target.result}" alt="Preview">
+                <button class="image-remove" onclick="this.parentElement.remove()">×</button>
+            `;
+            preview.appendChild(div);
         };
-        reader.readAsDataURL(input.files[i]);
-    }
+        reader.readAsDataURL(file);
+    });
 }
-function renderIdeaImages() {
-    const grid = document.getElementById('ideaImagesGrid');
-    if(!grid) return;
-    const saved = JSON.parse(localStorage.getItem('mise_idea_images') || '[]');
-    grid.innerHTML = '';
-    saved.forEach((src, idx) => {
+
+function renderSavedImages(images) {
+    document.getElementById('recipeSavedImages').innerHTML = '';
+    images.forEach((img, idx) => {
         const div = document.createElement('div');
         div.className = 'recipe-image';
-        div.innerHTML = `<img src="${src}"><button class="image-remove" onclick="deleteIdeaImage(${idx})">X</button>`;
-        grid.appendChild(div);
-    });
-}
-function deleteIdeaImage(idx) {
-    const saved = JSON.parse(localStorage.getItem('mise_idea_images') || '[]');
-    saved.splice(idx, 1);
-    localStorage.setItem('mise_idea_images', JSON.stringify(saved));
-    renderIdeaImages();
-}
-
-// ==========================================
-// PERSONALIZACIÓN DE COLORES DE LA APP
-// ==========================================
-function saveCustomColors() {
-    const colors = {
-        cream: document.getElementById('colCream').value,
-        ink: document.getElementById('colInk').value,
-        terra: document.getElementById('colTerra').value,
-        muted: document.getElementById('colMuted').value,
-        line: document.getElementById('colLine').value
-    };
-    localStorage.setItem(customColorsKey, JSON.stringify(colors));
-    applyColors(colors);
-}
-function applyColors(c) {
-    if(!c) return;
-    document.documentElement.style.setProperty('--cream', c.cream);
-    document.documentElement.style.setProperty('--ink', c.ink);
-    document.documentElement.style.setProperty('--terra', c.terra);
-    document.documentElement.style.setProperty('--muted', c.muted);
-    document.documentElement.style.setProperty('--line', c.line);
-}
-function resetCustomColors() {
-    localStorage.removeItem(customColorsKey);
-    document.documentElement.style.removeAttribute('--cream');
-    document.documentElement.style.removeAttribute('--ink');
-    document.documentElement.style.removeAttribute('--terra');
-    document.documentElement.style.removeAttribute('--muted');
-    document.documentElement.style.removeAttribute('--line');
-    document.getElementById('colCream').value = '#F5F0E8';
-    document.getElementById('colInk').value = '#1A1612';
-    document.getElementById('colTerra').value = '#C4623E';
-    document.getElementById('colMuted').value = '#756d65';
-    document.getElementById('colLine').value = '#e8ddd2';
-}
-(function() {
-    const saved = JSON.parse(localStorage.getItem(customColorsKey) || 'null');
-    if (saved) applyColors(saved);
-})();
-
-// ==========================================
-// MODO OSCURO
-// ==========================================
-const darkModeKey = 'mise_dark_mode';
-function toggleDarkMode() {
-    const isDark = document.body.classList.toggle('dark-mode');
-    localStorage.setItem(darkModeKey, isDark ? '1' : '0');
-    updateDarkModeUI();
-}
-function updateDarkModeUI() {
-    const isDark = document.body.classList.contains('dark-mode');
-    const emoji = document.getElementById('darkModeEmoji');
-    const label = document.getElementById('darkModeLabel');
-    if (emoji) emoji.textContent = isDark ? '☀️' : '🌙';
-    if (label) label.textContent = isDark ? 'Modo Oscuro activo' : 'Modo Claro activo';
-}
-(function() {
-    if (localStorage.getItem(darkModeKey) === '1') {
-        document.body.classList.add('dark-mode');
-    }
-})();
-
-// ==========================================
-// MOTOR EXCLUSIVO: PIZARRÓN DE NOTAS TÁCTIL E INFINITO
-// ==========================================
-let pizCards = [];
-let pizConnections = [];
-
-// Estados de Vista Pan/Zoom
-let pizPanX = 10;
-let pizPanY = 10;
-let pizZoom = 1.0;
-
-// Estados de Arrastre de Lienzo/Tarjetas
-let isPanningLienzo = false;
-let isDraggingCard = false;
-let cardBeingDraggedId = null;
-
-// Touch tracking para Celulares Android (Un dedo / Pinza dos dedos)
-let startTouchX = 0;
-let startTouchY = 0;
-let initialPanX = 0;
-let initialPanY = 0;
-let startCardX = 0;
-let startCardY = 0;
-let initialPinchDistance = 0;
-let initialZoom = 1.0;
-
-// Estado del Modo de Conexión Simplificado por un Toque
-let fastConnectModeActive = false;
-let connectionSourceCardId = null;
-
-function loadPizarronData() {
-    pizCards = JSON.parse(localStorage.getItem('mise_piz_cards_v4') || '[]');
-    pizConnections = JSON.parse(localStorage.getItem('mise_piz_connections_v4') || '[]');
-    
-    // Si está vacío, rellenamos con dos de ejemplo para guiar al usuario
-    if(pizCards.length === 0) {
-        pizCards = [
-            { id: "c_1", type: "text", title: "Idea Inicial", content: "Mover con 1 dedo.\nZoom con 2 dedos en pinza.", x: 40, y: 50, bg: "#faf1e6", text: "#1a1612" },
-            { id: "c_2", type: "image", title: "Inspiración Emplatado", url: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=200", footer: "Texto complementario inferior", x: 260, y: 120, bg: "#ffffff", text: "#c4623e" }
-        ];
-        pizConnections = [ { from: "c_1", to: "c_2" } ];
-        savePizarronToStorage();
-    }
-}
-
-function savePizarronToStorage() {
-    localStorage.setItem('mise_piz_cards_v4', JSON.stringify(pizCards));
-    localStorage.setItem('mise_piz_connections_v4', JSON.stringify(pizConnections));
-}
-
-function initPizarronEngine() {
-    loadPizarronData();
-    const container = document.getElementById('pizarronContainer');
-    
-    // Listeners de eventos táctiles nativos para celulares
-    container.addEventListener('touchstart', handlePizarronTouchStart, { passive: false });
-    container.addEventListener('touchmove', handlePizarronTouchMove, { passive: false });
-    container.addEventListener('touchend', handlePizarronTouchEnd, { passive: false });
-    
-    // Doble toque en el fondo vacío para agregar nota rápida
-    container.addEventListener('dblclick', function(e) {
-        if(e.target.id === 'pizarronContainer' || e.target.id === 'pizarronCanvas') {
-            const rect = document.getElementById('pizarronCanvas').getBoundingClientRect();
-            let rawX = (e.clientX - rect.left) / pizZoom;
-            let rawY = (e.clientY - rect.top) / pizZoom;
-            openPizarronModal('text', null, rawX, rawY);
-        }
-    });
-
-    applyPizarronTransform();
-    renderPizarronElements();
-}
-
-function resetPizarronView() {
-    pizPanX = 15;
-    pizPanY = 15;
-    pizZoom = 1.0;
-    applyPizarronTransform();
-}
-
-function applyPizarronTransform() {
-    const canvas = document.getElementById('pizarronCanvas');
-    if(canvas) {
-        canvas.style.transform = `translate(${pizPanX}px, ${pizPanY}px) scale(${pizZoom})`;
-    }
-}
-
-// LÓGICA MULTITÁCTIL (1 DEDO PAN/MOVE, 2 DEDOS PINZA ZOOM)
-function handlePizarronTouchStart(e) {
-    const container = document.getElementById('pizarronContainer');
-    
-    if(e.touches.length === 1) {
-        // Puede ser arrastrar lienzo o arrastrar tarjeta
-        const targetCard = e.target.closest('.note-floating-card');
-        if(targetCard) {
-            // Es arrastrar una nota
-            const cardId = targetCard.getAttribute('data-id');
-            
-            // Si el modo conectar rápido está activo, interceptamos el toque
-            if(fastConnectModeActive) {
-                e.preventDefault();
-                handleFastConnectionSelection(cardId);
-                return;
-            }
-            
-            isDraggingCard = true;
-            cardBeingDraggedId = cardId;
-            
-            const cardObj = pizCards.find(c => c.id === cardId);
-            startTouchX = e.touches[0].clientX;
-            startTouchY = e.touches[0].clientY;
-            startCardX = cardObj ? cardObj.x : 0;
-            startCardY = cardObj ? cardObj.y : 0;
-            
-            // Traer tarjeta al frente (Z-Index funcional)
-            document.querySelectorAll('.note-floating-card').forEach(el => el.style.zIndex = "5");
-            targetCard.style.zIndex = "10";
-        } else {
-            // Es arrastrar el lienzo completo
-            isPanningLienzo = true;
-            startTouchX = e.touches[0].clientX;
-            startTouchY = e.touches[0].clientY;
-            initialPanX = pizPanX;
-            initialPanY = pizPanY;
-        }
-    } else if (e.touches.length === 2) {
-        // Gesto de pinza para zoom en celular
-        isPanningLienzo = false;
-        isDraggingCard = false;
-        initialPinchDistance = getTouchDistance(e.touches[0], e.touches[1]);
-        initialZoom = pizZoom;
-    }
-}
-
-function handlePizarronTouchMove(e) {
-    // Prevenir scrolling nativo del navegador Android para un control fluido
-    e.preventDefault(); 
-    
-    if(isPanningLienzo && e.touches.length === 1) {
-        let dx = e.touches[0].clientX - startTouchX;
-        let dy = e.touches[0].clientY - startTouchY;
-        pizPanX = initialPanX + dx;
-        pizPanY = initialPanY + dy;
-        applyPizarronTransform();
-    } 
-    else if(isDraggingCard && cardBeingDraggedId && e.touches.length === 1) {
-        let dx = e.touches[0].clientX - startTouchX;
-        let dy = e.touches[0].clientY - startTouchY;
-        
-        // Ajustamos según el nivel de zoom actual para que se mueva exacto bajo el dedo
-        let scaledDx = dx / pizZoom;
-        let scaledDy = dy / pizZoom;
-        
-        let cardObj = pizCards.find(c => c.id === cardBeingDraggedId);
-        if(cardObj) {
-            cardObj.x = startCardX + scaledDx;
-            cardObj.y = startCardY + scaledDy;
-            
-            // Autocrecimiento / Expansión del pizarrón dinámico conforme se arrastran elementos lejos
-            const canvas = document.getElementById('pizarronCanvas');
-            let currentWidth = parseFloat(canvas.style.width) || 3000;
-            let currentHeight = parseFloat(canvas.style.height) || 3000;
-            if(cardObj.x + 250 > currentWidth) canvas.style.width = (cardObj.x + 600) + 'px';
-            if(cardObj.y + 250 > currentHeight) canvas.style.height = (cardObj.y + 600) + 'px';
-            
-            const el = document.querySelector(`[data-id="${cardBeingDraggedId}"]`);
-            if(el) {
-                el.style.left = cardObj.x + 'px';
-                el.style.top = cardObj.y + 'px';
-            }
-            // Redibujar flechas interconectadas en tiempo real
-            drawConnections();
-        }
-    } 
-    else if(e.touches.length === 2) {
-        // Calcular el zoom de pinza interactivo
-        let currentDist = getTouchDistance(e.touches[0], e.touches[1]);
-        if(initialPinchDistance > 0) {
-            let factor = currentDist / initialPinchDistance;
-            pizZoom = Math.max(0.4, Math.min(2.5, initialZoom * factor)); // límites de zoom óptimos
-            applyPizarronTransform();
-        }
-    }
-}
-
-function handlePizarronTouchEnd(e) {
-    if(isDraggingCard) {
-        savePizarronToStorage();
-    }
-    isPanningLienzo = false;
-    isDraggingCard = false;
-    cardBeingDraggedId = null;
-}
-
-function getTouchDistance(t1, t2) {
-    return Math.hypot(t1.clientX - t2.clientX, t1.clientY - t2.clientY);
-}
-
-// MODO DE CONEXIÓN SIMPLIFICADO UN TOQUE (MODO CONECTAR)
-function startFastConnectMode() {
-    fastConnectModeActive = !fastConnectModeActive;
-    connectionSourceCardId = null;
-    
-    const btn = document.getElementById('pizConnectModeBtn');
-    const indicator = document.getElementById('pizConnectIndicator');
-    
-    if(fastConnectModeActive) {
-        btn.style.background = 'var(--terra)';
-        btn.style.color = '#fff';
-        btn.textContent = '🛑 Cancelar';
-        indicator.classList.remove('hidden');
-    } else {
-        btn.style.background = '#e8ddd2';
-        btn.style.color = 'var(--ink)';
-        btn.textContent = '🔗 Unir';
-        indicator.classList.add('hidden');
-        document.querySelectorAll('.note-floating-card').forEach(c => c.classList.remove('selected-for-connect'));
-    }
-}
-
-function handleFastConnectionSelection(cardId) {
-    if(!connectionSourceCardId) {
-        // Selecciona la primera tarjeta origen
-        connectionSourceCardId = cardId;
-        const firstCardEl = document.querySelector(`[data-id="${cardId}"]`);
-        if(firstCardEl) firstCardEl.classList.add('selected-for-connect');
-    } else {
-        // Selecciona la segunda tarjeta destino y crea el enlace de flecha inmediato
-        if(connectionSourceCardId !== cardId) {
-            // Verificar que no exista ya esa unión exacta
-            const exists = pizConnections.some(conn => (conn.from === connectionSourceCardId && conn.to === cardId));
-            if(!exists) {
-                pizConnections.push({ from: connectionSourceCardId, to: cardId });
-                savePizarronToStorage();
-                drawConnections();
-            }
-        }
-        // Desactivar modo de conexión automáticamente para agilidad
-        startFastConnectMode();
-    }
-}
-
-function clearAllConnections() {
-    if(confirm('¿Seguro que querés borrar todas las flechas de unión?')) {
-        pizConnections = [];
-        savePizarronToStorage();
-        drawConnections();
-    }
-}
-
-// RENDERIZADO COMPLETO DE TARJETAS Y DIBUJO DE FLECHAS SVG
-function renderPizarronElements() {
-    // Eliminar las tarjetas antiguas para redibujar de forma limpia
-    document.querySelectorAll('.note-floating-card').forEach(el => el.remove());
-    const canvas = document.getElementById('pizarronCanvas');
-    
-    pizCards.forEach(card => {
-        const div = document.createElement('div');
-        div.className = `note-floating-card ${card.type === 'image' ? 'image-card-frame' : ''}`;
-        div.setAttribute('data-id', card.id);
-        div.style.left = card.x + 'px';
-        div.style.top = card.y + 'px';
-        div.style.backgroundColor = card.bg || '#ffffff';
-        div.style.color = card.text || '#1A1612';
-        div.style.borderColor = varColorLuminance(card.bg || '#ffffff', -0.12); // Marco dinámico estético
-        
-        let interiorHtml = `
-            <div class="card-drag-handle">📍 Arrastrar <span style="font-size:9px; opacity:0.6;">${card.type.toUpperCase()}</span></div>
-            <h4 style="color: inherit;">${card.title || 'Sin Título'}</h4>
+        div.innerHTML = `
+            <img src="${img}" alt="Recipe">
+            <button class="image-remove" onclick="removeSavedImage(${idx})">×</button>
         `;
-        
-        if(card.type === 'text') {
-            interiorHtml += `<p style="color: inherit;">${card.content || ''}</p>`;
-        } else if(card.type === 'image') {
-            interiorHtml += `<img src="${card.url || ''}">`;
-            if(card.footer) {
-                interiorHtml += `<div class="card-footer-text">${card.footer}</div>`;
-            }
-        }
-        
-        // Fila de acciones compactas editables / borrables
-        interiorHtml += `
-            <div class="card-actions-row">
-                <button onclick="editPizarronCard('${card.id}', event)">✏️</button>
-                <button onclick="deletePizarronCard('${card.id}', event)" style="color:#9d2d17;">🗑️</button>
-            </div>
-        `;
-        
-        div.innerHTML = interiorHtml;
-        canvas.appendChild(div);
-    });
-    
-    // Dibujar las uniones en la capa SVG integrada
-    setTimeout(() => { drawConnections(); }, 30);
-}
-
-function drawConnections() {
-    const svg = document.getElementById('pizarronSvgLayer');
-    if(!svg) return;
-    svg.innerHTML = '';
-    
-    pizConnections.forEach(conn => {
-        const fromEl = document.querySelector(`[data-id="${conn.from}"]`);
-        const toEl = document.querySelector(`[data-id="${conn.to}"]`);
-        
-        if(fromEl && toEl) {
-            // Cálculo de centroides de cada tarjeta flotante
-            let fx = fromEl.offsetLeft + (fromEl.offsetWidth / 2);
-            let fy = fromEl.offsetTop + (fromEl.offsetHeight / 2);
-            let tx = toEl.offsetLeft + (toEl.offsetWidth / 2);
-            let ty = toEl.offsetTop + (toEl.offsetHeight / 2);
-            
-            // Línea / Flecha conceptual estilizada
-            const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-            line.setAttribute('x1', fx);
-            line.setAttribute('y1', fy);
-            line.setAttribute('x2', tx);
-            line.setAttribute('y2', ty);
-            line.setAttribute('stroke', 'var(--terra)');
-            line.setAttribute('stroke-width', '2.5');
-            line.setAttribute('stroke-dasharray', '5,4'); // Estilo punteado profesional
-            svg.appendChild(line);
-            
-            // Marcador de dirección circular en el centro de la conexión
-            const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-            circle.setAttribute('cx', (fx + tx) / 2);
-            circle.setAttribute('cy', (fy + ty) / 2);
-            circle.setAttribute('r', '4');
-            circle.setAttribute('fill', 'var(--ink)');
-            svg.appendChild(circle);
-        }
+        document.getElementById('recipeSavedImages').appendChild(div);
     });
 }
 
-// OPERACIONES CRUD DE LA SECCIÓN NOTAS
-function openPizarronModal(type, cardId = null, spawnX = null, spawnY = null) {
-    document.getElementById('pizarronCardModal').style.display = 'flex';
-    document.getElementById('pizCardId').value = cardId || '';
-    document.getElementById('pizCardType').value = type;
-    document.getElementById('pizCardTitle').value = '';
-    document.getElementById('pizCardContent').value = '';
-    document.getElementById('pizCardFooter').value = '';
-    document.getElementById('pizCardImageUrl').value = '';
-    document.getElementById('pizCardBgColor').value = '#ffffff';
-    document.getElementById('pizCardTextColor').value = '#1A1612';
-    document.getElementById('pizImagePreviewContainer').innerHTML = '';
-    document.getElementById('pizCardImageFile').value = '';
-    
-    if(type === 'text') {
-        document.getElementById('pizModalTitle').textContent = cardId ? 'Editar Tarjeta de Texto' : 'Nueva Tarjeta de Texto';
-        document.getElementById('pizTextOnlyFields').classList.remove('hidden');
-        document.getElementById('pizImageFields').classList.add('hidden');
-    } else {
-        document.getElementById('pizModalTitle').textContent = cardId ? 'Editar Tarjeta con Imagen' : 'Nueva Tarjeta con Imagen';
-        document.getElementById('pizTextOnlyFields').classList.add('hidden');
-        document.getElementById('pizImageFields').classList.remove('hidden');
+function removeSavedImage(idx) {
+    const recipe = recipes.find(r => r.id === document.getElementById('recipeId').value);
+    if (recipe && recipe.images) {
+        recipe.images.splice(idx, 1);
+        renderSavedImages(recipe.images);
     }
-    
-    // Si es edición, cargamos los datos guardados en el modal
-    if(cardId) {
-        const card = pizCards.find(c => c.id === cardId);
-        if(card) {
-            document.getElementById('pizCardTitle').value = card.title || '';
-            document.getElementById('pizCardBgColor').value = card.bg || '#ffffff';
-            document.getElementById('pizCardTextColor').value = card.text || '#1A1612';
-            if(card.type === 'text') {
-                document.getElementById('pizCardContent').value = card.content || '';
-            } else {
-                document.getElementById('pizCardImageUrl').value = card.url || '';
-                document.getElementById('pizCardFooter').value = card.footer || '';
-                document.getElementById('pizImagePreviewContainer').innerHTML = `<img src="${card.url}" style="max-width:100%; max-height:80px; border-radius:8px;">`;
-            }
-        }
-    } else {
-        // Coordenadas por defecto inteligentes si se crea desde el panel de arriba
-        // Spawn relativo al centro visible para evitar que aparezcan ocultas
-        window._spawnCoordinates = {
-            x: spawnX !== null ? spawnX : Math.abs(pizPanX) + 60,
-            y: spawnY !== null ? spawnY : Math.abs(pizPanY) + 120
-        };
-    }
-}
-
-function closePizarronModal() {
-    document.getElementById('pizarronCardModal').style.display = 'none';
-}
-
-function handlePizImageUpload() {
-    const file = document.getElementById('pizCardImageFile').files[0];
-    if(!file) return;
-    const reader = new FileReader();
-    reader.onload = function(e) {
-        document.getElementById('pizCardImageUrl').value = e.target.result;
-        document.getElementById('pizImagePreviewContainer').innerHTML = `<img src="${e.target.result}" style="max-width:100%; max-height:80px; border-radius:8px;">`;
-    };
-    reader.readAsDataURL(file);
-}
-
-function savePizarronCard() {
-    const id = document.getElementById('pizCardId').value || 'c_' + Date.now();
-    const type = document.getElementById('pizCardType').value;
-    const title = document.getElementById('pizCardTitle').value.trim() || (type === 'text' ? 'Nota' : 'Imagen');
-    const bg = document.getElementById('pizCardBgColor').value;
-    const text = document.getElementById('pizCardTextColor').value;
-    
-    let existingCard = pizCards.find(c => c.id === id);
-    
-    let cardData = {
-        id: id,
-        type: type,
-        title: title,
-        bg: bg,
-        text: text,
-        x: existingCard ? existingCard.x : (window._spawnCoordinates ? window._spawnCoordinates.x : 100),
-        y: existingCard ? existingCard.y : (window._spawnCoordinates ? window._spawnCoordinates.y : 150)
-    };
-    
-    if(type === 'text') {
-        cardData.content = document.getElementById('pizCardContent').value;
-    } else {
-        const urlValue = document.getElementById('pizCardImageUrl').value;
-        if(!urlValue && !existingCard) { alert('Por favor seleccioná una foto para la tarjeta.'); return; }
-        cardData.url = urlValue || (existingCard ? existingCard.url : '');
-        cardData.footer = document.getElementById('pizCardFooter').value;
-    }
-    
-    if(existingCard) {
-        // Reemplazar / Actualizar
-        const idx = pizCards.findIndex(c => c.id === id);
-        pizCards[idx] = cardData;
-    } else {
-        // Añadir nueva
-        pizCards.push(cardData);
-    }
-    
-    savePizarronToStorage();
-    closePizarronModal();
-    renderPizarronElements();
-}
-
-function editPizarronCard(id, event) {
-    if(event) event.stopPropagation();
-    const card = pizCards.find(c => c.id === id);
-    if(card) {
-        openPizarronModal(card.type, id);
-    }
-}
-
-function deletePizarronCard(id, event) {
-    if(event) event.stopPropagation();
-    if(confirm('¿Seguro que querés borrar esta tarjeta del pizarrón?')) {
-        pizCards = pizCards.filter(c => c.id !== id);
-        // Borrar también las flechas huérfanas conectadas a ella
-        pizConnections = pizConnections.filter(conn => conn.from !== id && conn.to !== id);
-        savePizarronToStorage();
-        renderPizarronElements();
-    }
-}
-
-// Función auxiliar útil para oscurecer dinámicamente los bordes de tarjetas personalizadas
-function varColorLuminance(hex, lum) {
-    hex = String(hex).replace(/[^0-9a-f-A-F]/g, '');
-    if (hex.length < 6) hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
-    lum = lum || 0;
-    let rgb = "#", c, i;
-    for (i = 0; i < 3; i++) {
-        c = parseInt(hex.substr(i*2,2), 16);
-        c = Math.round(Math.min(Math.max(0, c + (c * lum)), 255)).toString(16);
-        rgb += ("00"+c).substr(c.length);
-    }
-    return rgb;
 }
 
 // ==========================================
-// INICIALIZADOR GENERAL DOM LOADING
+// INICIALIZACIÓN GENERAL
 // ==========================================
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener('load', () => {
+    initSplashScreen();
     initCalendar();
     loadRecipes();
-    updateDarkModeUI();
-    calculateMassVolume();
-    calculateBakerPercentages();
-    renderIdeaImages();
+    
+    setTimeout(() => {
+        const root = document.documentElement;
+        const savedColors = localStorage.getItem(customColorsKey);
+        if (savedColors) {
+            const colors = JSON.parse(savedColors);
+            Object.entries(colors).forEach(([key, value]) => {
+                root.style.setProperty(`--${key}`, value);
+            });
+        }
+    }, 100);
 });
 </script>
 </body>
